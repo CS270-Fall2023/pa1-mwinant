@@ -6,16 +6,11 @@ const int SIZE=256;
 
 int main()
 {
-    char buffer[SIZE]="ls -l file"; //"I love NIC" for testing purposes
+    char buffer[SIZE]; //="ls -l file";
     //Getting string from user
-    //char *cptr;
-    //printf("Please enter a string \n"); //Getting string from user
-    //cptr = fgets(buffer, SIZE, stdin);
-    // if(cptr== NULL) //
-    // {
-    //     exit(1);
-    // }
-    //printf("%d", len); //for testing
+    printf("Please enter a string \n"); //Getting string from user
+    fgets(buffer, SIZE, stdin);
+
     char **ptr;
 
     int numberOfTokens;
