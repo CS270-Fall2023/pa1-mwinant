@@ -25,7 +25,7 @@ int getTokens(char str[], char **ptr[])//will need to dynamically allocate space
         (*ptr)[i]=str;
 
     }
-    ptr[len-1]=NULL;
+    ptr[len-1]=NULL; //add null terminator to end of ptr
 
     for (int i =0; i<len/2; i++)  //print array of pointers to s array (s array is printed)
     {
@@ -36,14 +36,14 @@ int getTokens(char str[], char **ptr[])//will need to dynamically allocate space
     int token=0;
     int start=0;
     int end=0;
-    for(int i=0; i<len; i++) //len=str length
+    for(int i=0; i<=len; i++) //len=str length
     {
-        if((str[i])==' '|| str[i]=='\0' )
+        if((str[i])==' '|| (str[i])=='\0')
         {
             int ln=end-start+1; //length of string in token
             (*ptr)[token]=malloc((ln)*sizeof(char)); 
-            strncpy((*ptr)[token], str+start, ln-1);
-            (*ptr)[ln-1]=NULL;
+            strncpy((*ptr)[token], str+start, ln);
+            (*ptr)[ln]=NULL; //(*ptr)[ln-1]=NULL;
             start=end+1; //moving start to correct position
             token++;
         }

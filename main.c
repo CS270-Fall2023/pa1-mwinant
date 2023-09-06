@@ -6,7 +6,7 @@ const int SIZE=256;
 
 int main()
 {
-    char buffer[SIZE]="I love NIC "; //"I love NIC" for testing purposes
+    char buffer[SIZE]="ls -l file"; //"I love NIC" for testing purposes
     //Getting string from user
     //char *cptr;
     //printf("Please enter a string \n"); //Getting string from user
