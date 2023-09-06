@@ -23,7 +23,7 @@ int getTokens(char str[], char **ptr[])//will need to dynamically allocate space
 
     for (int i =0; i<len/2; i++)  //print array of pointers to s array (s array is printed)
     {
-        printf("%s\n",(*ptr)[i]); //scanf automatically deferences pointer, allowing it to print array
+        //printf("%s\n",(*ptr)[i]); //scanf automatically deferences pointer, allowing it to print array
 
     }
 
@@ -32,15 +32,17 @@ int getTokens(char str[], char **ptr[])//will need to dynamically allocate space
     int end=0;
     for(int i=0; i<len; i++) //len=str length
     {
-        if((str[i])==' ')
+        if((str[i])==' '|| str[i]=='\0' )
         {
             int ln=end-start+1; //length of string in token
-            (*ptr)[token]=malloc((ln)*sizeof(char));
+            (*ptr)[token]=malloc((ln)*sizeof(char)); 
             strncpy((*ptr)[token], str+start, ln-1);
-            ptr[ln-1]=NULL; //placing null terminator at end of token
+            (*ptr)[ln-1]=NULL;
             start=end+1; //moving start to correct position
             token++;
         }
+        //TODO count null terminator as token
+        
         end++;
  
     }
