@@ -18,10 +18,6 @@ int main()
     //printf("%d", len); //for testing
     char **ptr;
 
-    //using strtok() for testing
-    //strok(buffer);
-    //mystrok(buffer, ptr);
-
     int numberOfTokens;
     numberOfTokens=getTokens(buffer, &ptr);
     printf("Number of tokens: %d \n", numberOfTokens);
@@ -32,6 +28,7 @@ int main()
     }
 
     //free memory
+    free(ptr);
 
 
     return 0;

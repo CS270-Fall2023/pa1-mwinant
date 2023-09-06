@@ -15,7 +15,6 @@
 #define FUNCTIONS_H
 
 int getTokens(char str[], char **ptr[]);
-char * strok(char *str); //for testing
 
 
 

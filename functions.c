@@ -6,10 +6,16 @@
  * @date 2023-08-28
  * 
  * @copyright Copyright (c) 2023
- * char args: a pointer to a pointer to an array of pointers to char (array of tokens?)
+ * 
  */
 #include "functions.h"
-
+/**
+ * @brief Tokenize string from user
+ * 
+ * @param str from user
+ * @param ptr 
+ * @return int number of tokens
+ */
 int getTokens(char str[], char **ptr[])//will need to dynamically allocate space for args
 {
     int len=strlen(str);
@@ -41,27 +47,14 @@ int getTokens(char str[], char **ptr[])//will need to dynamically allocate space
             start=end+1; //moving start to correct position
             token++;
         }
-        //TODO count null terminator as token
         
         end++;
  
     }
-    return token; //returns int because it needs to return EOF, which is type int
+    return token;
 
 }
 
-// char * strok(char *str)
-// {
-//     char *delim=" ";
-//     char *token;
-//     token=strtok(str, delim);
-//     while(token) //while token does not equal NULL
-//     {
-//         printf("%s\n", token);
-//         token=strtok(NULL, delim);
-//     }
-//     return token;
-// }
     
 
 
