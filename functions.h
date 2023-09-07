@@ -18,5 +18,4 @@
 int getTokens(char str[], char **ptr[]);
 
 
-
 #endif

@@ -25,13 +25,6 @@ int getTokens(char str[], char **ptr[])//will need to dynamically allocate space
         (*ptr)[i]=NULL;
 
     }
-    
-
-    for (int i =0; i<len/2; i++)  //print array of pointers to s array (s array is printed)
-    {
-        //printf("%s\n",(*ptr)[i]); //scanf automatically deferences pointer, allowing it to print array
-
-    }
 
     int token=0;
     int start=0;
@@ -47,12 +40,11 @@ int getTokens(char str[], char **ptr[])//will need to dynamically allocate space
             start=end+1; //moving start to correct position
             token++;
 
-            //checking for more spaces
+            //checking for more whitespaces
             int result=isspace(str[i+1]);
-            if(result==1)
+            if(result==1) //if next character in array is a whitespace
             {
-                printf("whitespace detected...");
-                i++; //next character is not a whitespace
+                i++;
                 start=end+2;
                 end++;
             }
