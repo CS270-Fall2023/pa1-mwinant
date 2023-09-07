@@ -46,6 +46,16 @@ int getTokens(char str[], char **ptr[])//will need to dynamically allocate space
             (*ptr)[token][ln-1]='\0'; //(*ptr)[ln-1]=NULL;
             start=end+1; //moving start to correct position
             token++;
+
+            //checking for more spaces
+            int result=isspace(str[i+1]);
+            if(result==1)
+            {
+                printf("whitespace detected...");
+                i++; //next character is not a whitespace
+                start=end+2;
+                end++;
+            }
         }
         
         end++;
