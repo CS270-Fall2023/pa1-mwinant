@@ -9,7 +9,10 @@ int main()
     char buffer[SIZE]; //="ls -l file";
     //Getting string from user
     printf("Please enter a string \n"); //Getting string from user
+    //scanf
     fgets(buffer, SIZE, stdin);
+    int size=strlen(buffer);
+    buffer[size-1]='\0';
 
     char **ptr;
 
