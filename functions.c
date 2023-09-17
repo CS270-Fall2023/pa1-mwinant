@@ -29,7 +29,14 @@ int getTokens(char str[], char **ptr[])//will need to dynamically allocate space
     int token=0;
     int start=0;
     int end=0;
-    for(int i=0; i<=len; i++) //len=str length
+    int i=0;
+    if(str[0]==' ') //checking if first input by user is a whitespace
+    {
+        start++;
+        i++;
+        end++;
+    }
+    for(; i<=len; i++) //len=str length
     {
         if((str[i])==' '|| (str[i])=='\0')
         {
@@ -41,8 +48,7 @@ int getTokens(char str[], char **ptr[])//will need to dynamically allocate space
             token++;
 
             //checking for more whitespaces
-            int result=isspace(str[i+1]);
-            if(result==1) //if next character in array is a whitespace
+            if(str[i+1]==' ')
             {
                 i++;
                 start=end+2;
